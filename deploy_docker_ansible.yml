@@ -1,8 +1,8 @@
 ---
 # Deploy Docker Container using ansible-playbook
 - name: Deploy Docker container
-  hosts: 192.168.101.29
-  remote_user: ubuntu
+  hosts: 192.168.101.32
+  remote_user: ubuntu2
   become: true
   tasks:
     - name: Copy Dockerfile to the VM
