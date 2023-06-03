@@ -1,0 +1,29 @@
+---
+# Deploy Docker Container using ansible-playbook
+- name: Deploy Docker container
+  hosts: 192.168.101.29
+  remote_user: ubuntu
+  become: true
+  tasks:
+    - name: Copy Dockerfile to the VM
+      copy:
+        src: ./Dockerfile
+        dest: /tmp/Dockerfile
+
+    - name: Copy nginx.conf to the VM
+      copy:
+        src: ./nginx.conf
+        dest: /tmp/nginx.conf
+
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+
+    - name: Build Docker image
+      command: docker build -t nginxt /tmp
+      args:
+        chdir: /tmp
+
+    - name: Run Docker container
+      command: docker run -d -p 9000:80 nginxt
