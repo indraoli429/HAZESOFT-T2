@@ -31,13 +31,18 @@ git clone https://github.com/indraoli429/HAZESOFT-T2.git
 
 Step 6: Nevigate to the repo
 
-Step 7: Run the following command to build the docker image
+Step 7: change the hosts ip address and remote_user in deploy_docker_ansible.yml file based on your VM
+![image](https://github.com/indraoli429/HAZESOFT-T2/assets/42300489/ae507040-4b44-4b93-bf8f-0a2b5d192507)
+
+Step 8: Run the following command to build the docker image
 ``` ansible
     ansible-playbook deploy_docker_ansible.yml -kK
 ```
 where `-k` ask for the connection password and `-K` ask for priviledge password.
+![image](https://github.com/indraoli429/HAZESOFT-T2/assets/42300489/ad67e3d1-ebdd-4520-94d0-6f394044b3b0)
 
-Step 8: Go to your browser and type following url
+Step 9: Go to your browser and type following url
 ```url
 vm-ip-address:9000/site/
 ```
+![image](https://github.com/indraoli429/HAZESOFT-T2/assets/42300489/bf71096e-cd66-40e9-8d01-e39ce5538889)
